@@ -46,7 +46,7 @@ def process_coins(coffee_choice):
         print(f"Your change: {total - menu[coffee_choice]["cost"]} $")
         total = total - menu[coffee_choice]["cost"]
         return total
-    return total
+    return totat
 
 def coffee_maker(coffee_choice):
     total_money = process_coins(coffee_choice)
