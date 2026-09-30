@@ -16,3 +16,5 @@ question_obj = QuizBrain(question_bank)
 
 while question_obj.still_has_question():
     question_obj.next_question()
+
+question_obj.final_score()
