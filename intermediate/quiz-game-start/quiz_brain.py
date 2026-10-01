@@ -22,7 +22,7 @@ class QuizBrain:
             print("You got it right")
             print(f"your correct answer is: {question_ans}")
             self.score += 1
-            print(f"Your score is: {self.score}/{len(self.question_list)}")
+            # print(f"Your score is: {self.score}/{len(self.question_list)}")
         else:
             print("That's wrong")
         print(f"Your score is: {self.score}")
