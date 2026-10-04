@@ -1,4 +1,4 @@
-from turtle import Turtle, Screen
+from turtle import Screen
 import time
 from snake import Snake
 
@@ -10,6 +10,7 @@ screen.title("My Snake Game")
 screen.tracer(0)
 
 snake = Snake()
+
 game_is_on = True
 while game_is_on:
     screen.update()
@@ -17,5 +18,5 @@ while game_is_on:
     snake.move()
 
 
-    
+
 screen.exitonclick()
