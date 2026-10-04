@@ -4,6 +4,8 @@ from snake import Snake
 from scoreboard import Scoreboard
 import time
 
+WALLCOLLISION = 290
+
 screen = Screen()
 screen.setup(width=600, height=600)
 screen.bgcolor("black")
@@ -29,11 +31,18 @@ while game_is_on:
 
     if snake.segments[0].distance(food) < 15:
         food.refresh()
+        snake.extend()
         scoreboard.increase_score()
     
-    if snake.segments[0].xcor() > 280 or snake.segments[0].xcor() < -280 or snake.segments[0].ycor() > 280 or snake.segments[0].ycor() < -280:
+    if snake.segments[0].xcor() > WALLCOLLISION or snake.segments[0].xcor() < -WALLCOLLISION or snake.segments[0].ycor() > WALLCOLLISION or snake.segments[0].ycor() < -WALLCOLLISION:
         scoreboard.gameover()
         game_is_on = False
 
+    for segment in snake.segments:
+        if segment == snake.segments[0]:
+            pass
+        elif snake.segments[0].distance(segment) < 10:
+            game_is_on = False
+            scoreboard.gameover()
 
 screen.exitonclick()
