@@ -2,6 +2,10 @@ from turtle import Turtle
 # constants
 MOVE_BY = 20
 STARTING_POSITIONS = [(0, 0), (-20, 0), (-40, 0)]
+UP = 90
+DOWN = 270
+LEFT = 180
+RIGHT = 0
 
 class Snake:
     def __init__(self):
@@ -25,3 +29,23 @@ class Snake:
             self.segments[seg_num].goto(seg_x_cor, seg_y_cor)
         # this tell the first square to move forward by 20 spaces
         self.segments[0].forward(MOVE_BY)
+
+    def up(self):
+        current_head = self.segments[0].heading()
+        if current_head != DOWN:
+            self.segments[0].setheading(UP)
+    
+    def down(self):
+        current_head = self.segments[0].heading()
+        if current_head != UP:
+            self.segments[0].setheading(DOWN)
+    
+    def left(self):
+        current_head = self.segments[0].heading()
+        if current_head != RIGHT:
+            self.segments[0].setheading(LEFT)
+    
+    def right(self):
+        current_head = self.segments[0].heading()
+        if current_head != LEFT:
+            self.segments[0].setheading(RIGHT)
