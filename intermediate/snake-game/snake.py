@@ -9,7 +9,6 @@ RIGHT = 0
 
 class Snake:
     def __init__(self):
-        
         self.segments = []
         for pos in STARTING_POSITIONS:
             new_square = Turtle("square")
