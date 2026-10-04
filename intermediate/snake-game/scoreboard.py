@@ -10,6 +10,10 @@ class Scoreboard(Turtle):
         self.write(f"Score: {self.score}", align='center', font=('Arial', 24, 'normal'))
         self.hideturtle()
     
+    def gameover(self):
+        self.goto(0, 0)
+        self.write(f"Game over", align='center', font=('Arial', 24, 'normal'))
+
     def increase_score(self):
         self.score += 1
         self.clear() # Clear everything that this Turtle has drawn or written.
