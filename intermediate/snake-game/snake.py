@@ -1,10 +1,13 @@
 from turtle import Turtle
+# constants
+MOVE_BY = 20
+STARTING_POSITIONS = [(0, 0), (-20, 0), (-40, 0)]
 
 class Snake:
     def __init__(self):
-        self.starting_positions = [(0, 0), (-20, 0), (-40, 0)]
+        
         self.segments = []
-        for pos in self.starting_positions:
+        for pos in STARTING_POSITIONS:
             new_square = Turtle("square")
             new_square.color("white")
             new_square.penup()
@@ -21,4 +24,4 @@ class Snake:
             seg_y_cor = self.segments[seg_num - 1].ycor()
             self.segments[seg_num].goto(seg_x_cor, seg_y_cor)
         # this tell the first square to move forward by 20 spaces
-        self.segments[0].forward(20)
+        self.segments[0].forward(MOVE_BY)
