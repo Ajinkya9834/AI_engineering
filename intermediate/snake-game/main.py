@@ -35,14 +35,13 @@ while game_is_on:
         scoreboard.increase_score()
     
     if snake.segments[0].xcor() > WALLCOLLISION or snake.segments[0].xcor() < -WALLCOLLISION or snake.segments[0].ycor() > WALLCOLLISION or snake.segments[0].ycor() < -WALLCOLLISION:
-        scoreboard.gameover()
-        game_is_on = False
+        scoreboard.reset()
 
     for segment in snake.segments:
         if segment == snake.segments[0]:
             pass
         elif snake.segments[0].distance(segment) < 10:
-            game_is_on = False
-            scoreboard.gameover()
+            scoreboard.reset()
+            snake.reset()
 
 screen.exitonclick()
