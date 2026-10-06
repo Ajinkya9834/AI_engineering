@@ -36,6 +36,7 @@ while game_is_on:
     
     if snake.segments[0].xcor() > WALLCOLLISION or snake.segments[0].xcor() < -WALLCOLLISION or snake.segments[0].ycor() > WALLCOLLISION or snake.segments[0].ycor() < -WALLCOLLISION:
         scoreboard.reset()
+        
 
     for segment in snake.segments:
         if segment == snake.segments[0]:
