@@ -21,12 +21,12 @@ for name in names:
 # print(person_names)
 
 with open("./Input/Letters/starting_letter.txt", mode="r") as letter:
-    content = letter.read()
+    content = letter.read() # reads the file's content and returns it as a string.
     print(content)
   
 
 for person_name in person_names:
-    # returns a string with replaced name
+    # returns a new string with replaced name and does not modify the original content string.
     letter_for_name  = content.replace(REPLACE_TEXT, person_name)
 
     with open(f"./Output/ReadyToSend/invited_letter_{person_name}.txt", mode="w") as invite:
