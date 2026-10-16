@@ -1,10 +1,16 @@
 import csv
-# import pandas as pd
-with open("weather_data.csv") as weather_data:
-    data = csv.reader(weather_data)
-    temp_list =[]
-    print(data)
-    for row in data:
-        if row[1].isalpha() != True:
-            temp_list.append(int(row[1]))
-    print(temp_list)
+import pandas as pd
+
+data = pd.read_csv("weather_data.csv")
+# print(data) # pandas dataframe
+# print(type(data["temp"])) # pandas series
+temp_list = data["temp"].to_list()
+mean_temp = data["temp"].mean()
+# print(mean_temp)
+# print(data["temp"].max())
+monday = data[data["day"] == "Monday"]
+celsius_temp = monday["temp"]
+print("fa*******************")
+fa_temp = (celsius_temp * 1.8) + 32
+print(fa_temp)
+
