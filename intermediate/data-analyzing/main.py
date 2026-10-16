@@ -8,9 +8,15 @@ temp_list = data["temp"].to_list()
 mean_temp = data["temp"].mean()
 # print(mean_temp)
 # print(data["temp"].max())
-monday = data[data["day"] == "Monday"]
-celsius_temp = monday["temp"]
+monday = data[data.day == "Monday"]
+celsius_temp = monday.temp
 print("fa*******************")
 fa_temp = (celsius_temp * 1.8) + 32
-print(fa_temp)
+# print(fa_temp)
 
+data_dict={
+    "std": ["amy", "bob", "cindy"],
+    "score": [76, 56, 65]
+}
+data = pd.DataFrame(data_dict)
+print(data)
